@@ -1,0 +1,75 @@
+1.
+what is mutable string with example
+
+In Java, strings are typically immutable, 
+which means their values cannot be changed after they are created. 
+This immutability is a fundamental property of the String class. 
+However, you can create a mutable string using the StringBuilder or StringBuffer classes.
+ These classes provide methods to modify the content of a string without creating a new string object.
+ Here's an example using StringBuilder:
+
+public class MutableStringExample {
+    public static void main(String[] args) {
+        StringBuilder mutableString = new StringBuilder("Hello, ");
+        mutableString.append("World!"); // Append "World!" to the existing string
+        System.out.println(mutableString); // Output: Hello, World!
+
+        mutableString.insert(7, "Java "); // Insert "Java " at position 7
+        System.out.println(mutableString); // Output: Hello, Java World!
+
+        mutableString.delete(7, 11); // Delete characters from position 7 to 10 (exclusive)
+        System.out.println(mutableString); // Output: Hello, World!
+
+        mutableString.replace(7, 12, "Java"); // Replace characters from position 7 to 11 with "Java"
+        System.out.println(mutableString); // Output: Hello, Java!
+
+        mutableString.reverse(); // Reverse the string
+        System.out.println(mutableString); // Output: !avaJ ,olleH
+    }
+}
+
+2.
+public class ReverseString {
+    public static void main(String[] args) {
+        String inputString = "PWSKILLS";
+        String reversedString = reverse(inputString);
+
+        System.out.println("Original string: " + inputString);
+        System.out.println("Reversed string: " + reversedString);
+    }
+
+    public static String reverse(String input) {
+        StringBuilder reversed = new StringBuilder(input);
+        return reversed.reverse().toString();
+    }
+}
+
+3.
+java program sort string alphabetically
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class SortStringsAlphabetically {
+    public static void main(String[] args) {
+        String[] words = {"banana", "apple", "cherry", "date", "grape"};
+
+        // Using Arrays.sort()
+        Arrays.sort(words);
+
+        System.out.println("Sorted using Arrays.sort():");
+        for (String word : words) {
+            System.out.println(word);
+        }
+
+        // Using Collections.sort()
+        List<String> wordList = Arrays.asList("banana", "apple", "cherry", "date", "grape");
+        Collections.sort(wordList);
+
+        System.out.println("\nSorted using Collections.sort():");
+        for (String word : wordList) {
+            System.out.println(word);
+        }
+    }
+}
