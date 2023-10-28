@@ -1,0 +1,142 @@
+question 1 = java string program using taking input 
+
+
+import java.util.Scanner;
+
+public class UserInputString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine(); // Read a line of text from the user
+
+        System.out.println("You entered: " + userInput);
+
+        // Close the scanner to release system resources
+        scanner.close();
+    }
+}
+
+2.concatanation method 
+
+
+using two method + operator and concate() method
+import java.util.Scanner;
+
+public class UserInputString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine(); // Read a line of text from the user
+
+        System.out.println("You entered: " + userInput);
+
+        // Close the scanner to release system resources
+        scanner.close();
+    }
+}
+3.finding length of string 
+
+find length using length method 
+example
+public class StringLengthExample {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        
+        // Using the length() method to find the length of the string
+        int length = str.length();
+        
+        System.out.println("The length of the string is: " + length); // Output: The length of the string is: 13
+    }
+}
+
+4.how do you compare to string in java 
+
+Using the equals() method:
+The equals() method checks whether the content of two strings is the same. It returns true if the content is the same and false if it's different.
+public class StringComparisonExample {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+        String str3 = "Hello";
+
+        boolean areEqual1 = str1.equals(str2);  // false
+        boolean areEqual2 = str1.equals(str3);  // true
+
+        System.out.println("Are str1 and str2 equal? " + areEqual1);
+        System.out.println("Are str1 and str3 equal? " + areEqual2);
+    }
+}
+
+Using the compareTo() method
+public class StringComparisonExample {
+    public static void main(String[] args) {
+        String str1 = "Apple";
+        String str2 = "Banana";
+        String str3 = "Cherry";
+
+        int result1 = str1.compareTo(str2);  // Negative value because "Apple" comes before "Banana"
+        int result2 = str2.compareTo(str1);  // Positive value because "Banana" comes after "Apple"
+        int result3 = str1.compareTo(str3);  // Negative value because "Apple" comes before "Cherry"
+
+        System.out.println("Comparison result (str1 vs str2): " + result1);
+        System.out.println("Comparison result (str2 vs str1): " + result2);
+        System.out.println("Comparison result (str1 vs str3): " + result3);
+    }
+}
+
+5.
+
+length of string "refrigerator
+The length of the string "refrigerator" is 12 characters
+
+6.
+public class CheckLetterInWord {
+    public static void main(String[] args) {
+        String word = "umbrella";
+        char letterToCheck = 'e';
+        boolean isPresent = false;
+
+        // Iterate through each character in the word
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == letterToCheck) {
+                isPresent = true;
+                break;  // If 'e' is found, exit the loop
+            }
+        }
+
+        if (isPresent) {
+            System.out.println("The letter '" + letterToCheck + "' is present in the word.");
+        } else {
+            System.out.println("The letter '" + letterToCheck + "' is not present in the word.");
+        }
+    }
+}
+
+7.
+public class RemoveConsonantsFromString {
+    public static void main(String[] args) {
+        String inputString = "hello, have a good day";
+        String resultString = removeConsonants(inputString);
+
+        System.out.println("Original string: " + inputString);
+        System.out.println("String with consonants removed: " + resultString);
+    }
+
+    public static String removeConsonants(String input) {
+        StringBuilder result = new StringBuilder();
+        String vowels = "aeiouAEIOU";
+
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if (vowels.indexOf(currentChar) != -1 || Character.isWhitespace(currentChar) || currentChar == ',') {
+                result.append(currentChar);
+            }
+        }
+
+        return result.toString();
+    }
+}
+
+
